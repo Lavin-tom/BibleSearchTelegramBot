@@ -29,7 +29,7 @@ def language_change_fun(language):
     # First, clear the existing keyboard options
     testament_select.keyboard.clear()
 
-    if language == 'malayalam':
+    if language == 'മലയാളം':
         testament_select.add('പഴയ_നിയമം', 'പുതിയ_നിയമം')
         # Load the XML file for Malayalam
         xml_file_path = 'res/bible_mal.xml'
