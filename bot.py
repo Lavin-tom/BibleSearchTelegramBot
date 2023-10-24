@@ -6,27 +6,41 @@ TOKEN = open('api-key.txt').readline()
 bot = telebot.TeleBot(TOKEN)
 print("Bot is online")
 
-#load xml files here
-xml_file_path = 'res/bible_mal.xml'
-tree = ET.parse(xml_file_path)
-root = tree.getroot()
+root = None  # Declare root as a global variable initially
 
 hey_msg = ['Hi','Hello','Hey']
-user_name = []
-bot_name = []
 knownUsers = []
 userStep = {}
 
 book_id_to_search = []
 chapter_to_search = []
+language = 'malayalam'  #default language 
 
 hideBoard = types.ReplyKeyboardRemove()  # hide the keyboard
 
 language_select = types.ReplyKeyboardMarkup(one_time_keyboard=True)
-language_select.add('English','Malayalam')
+language_select.add('English','മലയാളം')
 
 testament_select = types.ReplyKeyboardMarkup(one_time_keyboard=True)
 testament_select.add('പഴയ_നിയമം','പുതിയ_നിയമം')
+
+def language_change_fun(language):
+    global root
+    # First, clear the existing keyboard options
+    testament_select.keyboard.clear()
+
+    if language == 'malayalam':
+        testament_select.add('പഴയ_നിയമം', 'പുതിയ_നിയമം')
+        # Load the XML file for Malayalam
+        xml_file_path = 'res/bible_mal.xml'
+    elif language == 'english':
+        testament_select.add('Old', 'New')
+        # Load the XML file for English
+        xml_file_path = 'res/bible_eng.xml'
+
+    # Parse the XML file
+    tree = ET.parse(xml_file_path)
+    root = tree.getroot()
 
 New_testement_select = types.ReplyKeyboardMarkup(one_time_keyboard=True)
 New_testement_select.add('മത്തായി','മർക്കൊസ്','ലൂക്കോസ്','യോഹന്നാൻ','പ്രവൃത്തികൾ','റോമർ','1_കൊരിന്ത്യർ','2_കൊരിന്ത്യർ','ഗലാത്യർ','എഫെസ്യർ','ഫിലിപ്പിയർ','കൊലൊസ്സ്യർ',
@@ -37,6 +51,16 @@ Old_testement_select.add('ഉല്പത്തി','പുറപ്പാട്
 '1_ശമൂവേൽ','2_ശമൂവേൽ','1_രാജാക്കന്മാർ','2_രാജാക്കന്മാർ','1_ദിനവൃത്താന്തം','2_ദിനവൃത്താന്തം','എസ്രാ','നെഹെമ്യാവു','എസ്ഥേർ','ഇയ്യോബ്','സങ്കീർത്തനങ്ങൾ','സദൃശ്യവാക്യങ്ങൾ',
 'സഭാപ്രസംഗി','ഉത്തമഗീതം','യെശയ്യാ','യിരമ്യാവു','വിലാപങ്ങൾ','യെഹേസ്കേൽ','ദാനീയേൽ','ഹോശേയ','യോവേൽ','ആമോസ്','ഓബദ്യാവു','യോനാ','മീഖാ','നഹൂം','ഹബക്കൂക്ക്',
 'സെഫന്യാവു','ഹഗ്ഗായി','സെഖര്യാവു','മലാഖി')
+
+New_testement_english_select = types.ReplyKeyboardMarkup(one_time_keyboard=True)
+New_testement_english_select.add('Matthew','Mark','Luke','John','Acts','Romans','1_Corinthians','2_Corinthians','Galatians','Ephesians','Philippians','Colossians',
+'1_Thessalonians','2_Thessalonians','1_Timothy','2_Timothy','Titus','Philemon','Hebrews','James','1_Peter','2_Peter','1_John','2_John','3_John','Jude','Revelation')
+
+Old_testement_english_select = types.ReplyKeyboardMarkup(one_time_keyboard=True)
+Old_testement_english_select.add('Genesis','Exodus','Leviticus','Numbers','Deuteronomy','Joshua','Judges','Ruth',
+'1_Samuel','2_Samuel','1_Kings','2_Kings','1_Chronicles','2_Chronicles','Ezra','Nehemiah','Esther','Job','Psalms','Proverbs',
+'Ecclesiastes','Song_of_Solomon','Isaiah','Jeremiah','Lamentations','Ezekiel','Daniel','Hosea','Joel','Amos','Obadiah','Jonah','Micah','Nahum','Habakkuk',
+'Zephaniah','Haggai','Zechariah','Malachi')
 
 chapter_select = types.ReplyKeyboardMarkup(one_time_keyboard=True)
 
@@ -75,6 +99,7 @@ def find_chapter(book_id_to_search):
         chapter_select.add(str(i))
 
 def search_result(book_id_to_search, chapter,m):
+    print(book_id_to_search,chapter)
     cid = m.chat.id
     userStep[cid] = 0
     text = ' '
@@ -95,8 +120,9 @@ def search_result(book_id_to_search, chapter,m):
                 text+= '.'
                 text+= verse_text
                 text+= '\n\n'
-
-            bot.send_message(m.chat.id,text)
+                if len(text) > 1000:    #to solve the issue of max char in one message in Telegram 
+                    bot.send_message(m.chat.id,text)
+                    text = ' '
         else:
             print("Chapter not found.")
     else:
@@ -119,7 +145,6 @@ def handle_about(m):
     note = "About notes here"
     bot.send_message(m.chat.id,note,parse_mode='Markdown')
 
-
 #show source
 @bot.message_handler(commands=['source'])
 def handle_source(m):
@@ -128,11 +153,19 @@ def handle_source(m):
         formatted_message = f"[Click here]({link}) to visit the GitHub repository."
         bot.reply_to(m, formatted_message, parse_mode='Markdown')
 
-#change language
+#show start
+@bot.message_handler(commands=['start'])
+def command_start(m):
+	cid = m.chat.id
+	if cid not in knownUsers:
+		knownUsers.append(cid)
+		userStep[cid] = 0
+
+#search bible
 @bot.message_handler(commands=['change_language'])
 def command_change_language(m):
     cid = m.chat.id
-    bot.send_message(cid, "Change language option is not yet implemented",reply_markup=language_select)
+    bot.send_message(cid, "Now choose English or മലയാളം ",reply_markup=language_select)
     userStep[cid] = 'change_language'
 
 #search bible
@@ -150,11 +183,19 @@ def msg_search_select(m):
     bot.send_chat_action(cid, 'typing')
     userQuery = m.text.lower()
     if userQuery == 'പഴയ_നിയമം':
-        bot.send_message(cid, "Choose any book?",reply_markup=Old_testement_select)
+        bot.send_message(cid, "പുസ്‌തകം തിരഞ്ഞെടുക്കുക !!",reply_markup=Old_testement_select)
         userStep[cid] = 'select_chapter'
 
     elif userQuery == 'പുതിയ_നിയമം':
-        bot.send_message(cid, "Choose any book?",reply_markup=New_testement_select)
+        bot.send_message(cid, "പുസ്‌തകം തിരഞ്ഞെടുക്കുക !!",reply_markup=New_testement_select)
+        userStep[cid] = 'select_chapter'
+        
+    elif userQuery == 'old':
+        bot.send_message(cid, "Choose any book?",reply_markup=Old_testement_english_select)
+        userStep[cid] = 'select_chapter'
+
+    elif userQuery == 'new':
+        bot.send_message(cid, "Choose any book?",reply_markup=New_testement_english_select)    
         userStep[cid] = 'select_chapter'
     else:
         bot.send_message(cid,"Invalid Commmands")
@@ -172,7 +213,7 @@ def handle_select_chapter(m):
         bot.send_message(m.chat.id, "Select chapter",reply_markup=chapter_select)
         userStep[cid] = 'searching'
     except Exception as e:
-        bot.send_message(m.chat.id, "Search error!! error in chapter selection")
+        bot.send_message(m.chat.id, "Search error!! error while selecting chapter")
 
 #[verses selection]
 @bot.message_handler(func=lambda message: get_user_step(message.chat.id) == 'searching')
@@ -183,9 +224,24 @@ def handle_user_old_test_search(m):
         chapter_to_search.append(m.text)
         search_result(book_id_to_search[0],chapter_to_search[0],m)
         print(book_id_to_search[0],chapter_to_search[0])
-        chapter_to_search.clear()
+        chapter_select.keyboard.clear()
         userStep[cid] = 'search_bible'
     except Exception as e:
-        bot.send_message(m.chat.id, "Search error!! error in searching")
-
+        bot.send_message(m.chat.id, "Search error!! error while selecting verses")
+ 
+#language change  
+@bot.message_handler(func=lambda message: get_user_step(message.chat.id) == 'change_language')
+def msg_search_select(m):
+    cid = m.chat.id
+    userStep[cid] = 0
+    bot.send_chat_action(cid, 'typing')
+    userQuery = m.text.lower()
+    if userQuery == 'malayalam':
+        language_change_fun(userQuery)
+        bot.send_message(m.chat.id, "ഭാഷ മലയാളത്തിലേക്ക് മാറിയിരിക്കുന്നു m /search")
+    elif userQuery == 'english':
+        language_change_fun(userQuery)
+        bot.send_message(m.chat.id, "Language changed to English now /search")        
+        
+        
 bot.infinity_polling()
