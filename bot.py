@@ -221,6 +221,7 @@ def handle_user_old_test_search(m):
     cid = m.chat.id
     userStep[cid] = 0
     try:
+	chapter_to_search.clear()
         chapter_to_search.append(m.text)
         search_result(book_id_to_search[0],chapter_to_search[0],m)
         print(book_id_to_search[0],chapter_to_search[0])
