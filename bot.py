@@ -14,7 +14,7 @@ userStep = {}
 
 book_id_to_search = []
 chapter_to_search = []
-language = 'malayalam'  #default language 
+language = 'മലയാളം'  #default language 
 
 hideBoard = types.ReplyKeyboardRemove()  # hide the keyboard
 
@@ -31,10 +31,10 @@ def language_change_fun(language):
 
     if language == 'മലയാളം':
         testament_select.add('പഴയ_നിയമം', 'പുതിയ_നിയമം')
-        # Load the XML file for Malayalam
+        # Load the XML file for മലയാളം
         xml_file_path = 'res/bible_mal.xml'
     elif language == 'english':
-        testament_select.add('Old', 'New')
+        testament_select.add('Old_Testament', 'New_Testament')
         # Load the XML file for English
         xml_file_path = 'res/bible_eng.xml'
 
@@ -120,7 +120,7 @@ def search_result(book_id_to_search, chapter,m):
                 text+= '.'
                 text+= verse_text
                 text+= '\n\n'
-                if len(text) > 1000:    #to solve the issue of max char in one message in Telegram 
+                if len(text) > 1500:    #to solve the issue of max char in one message in Telegram 
                     bot.send_message(m.chat.id,text)
                     text = ' '
         else:
@@ -165,14 +165,20 @@ def command_start(m):
 @bot.message_handler(commands=['change_language'])
 def command_change_language(m):
     cid = m.chat.id
-    bot.send_message(cid, "Now choose English or മലയാളം ",reply_markup=language_select)
+	if language == 'english':
+		bot.send_message(cid, "Now choose English or Malayalam",reply_markup=language_select)
+	elif language == 'മലയാളം':
+		bot.send_message(cid, "Malayalam englisho thiranjedukkua",reply_markup=language_select)
     userStep[cid] = 'change_language'
 
 #search bible
 @bot.message_handler(commands=['search'])
 def command_search(m):
     cid = m.chat.id
-    bot.send_message(cid, "what do you want Old or New ?",reply_markup=testament_select)
+	if language == 'english':
+		bot.send_message(cid, "what do you want Old-Testament or New-Testament ?",reply_markup=testament_select)
+	elif language == 'മലയാളം':
+		bot.send_message(cid, "Puthiya niyamam aano Pazhayaniyamam aano vaayikendathu?",reply_markup=testament_select)
     userStep[cid] = 'search'
 
 #--------------------------------------Bible Search-------------------------------#
@@ -190,11 +196,11 @@ def msg_search_select(m):
         bot.send_message(cid, "പുസ്‌തകം തിരഞ്ഞെടുക്കുക !!",reply_markup=New_testement_select)
         userStep[cid] = 'select_chapter'
         
-    elif userQuery == 'old':
+    elif userQuery == 'old_testament':
         bot.send_message(cid, "Choose any book?",reply_markup=Old_testement_english_select)
         userStep[cid] = 'select_chapter'
 
-    elif userQuery == 'new':
+    elif userQuery == 'new_testament':
         bot.send_message(cid, "Choose any book?",reply_markup=New_testement_english_select)    
         userStep[cid] = 'select_chapter'
     else:
@@ -221,7 +227,7 @@ def handle_user_old_test_search(m):
     cid = m.chat.id
     userStep[cid] = 0
     try:
-	chapter_to_search.clear()
+		chapter_to_search.clear()
         chapter_to_search.append(m.text)
         search_result(book_id_to_search[0],chapter_to_search[0],m)
         print(book_id_to_search[0],chapter_to_search[0])
@@ -237,9 +243,9 @@ def msg_search_select(m):
     userStep[cid] = 0
     bot.send_chat_action(cid, 'typing')
     userQuery = m.text.lower()
-    if userQuery == 'malayalam':
+    if userQuery == 'മലയാളം':
         language_change_fun(userQuery)
-        bot.send_message(m.chat.id, "ഭാഷ മലയാളത്തിലേക്ക് മാറിയിരിക്കുന്നു m /search")
+        bot.send_message(m.chat.id, "ഭാഷ മലയാളത്തിലേക്ക് മാറിയിരിക്കുന്നു  /search")
     elif userQuery == 'english':
         language_change_fun(userQuery)
         bot.send_message(m.chat.id, "Language changed to English now /search")        
