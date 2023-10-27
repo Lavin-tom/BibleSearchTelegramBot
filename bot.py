@@ -123,6 +123,7 @@ def search_result(book_id_to_search, chapter,m):
                 if len(text) > 1500:    #to solve the issue of max char in one message in Telegram 
                     bot.send_message(m.chat.id,text)
                     text = ' '
+            bot.send_message(m.chat.id, "/search")           
         else:
             print("Chapter not found.")
     else:
@@ -142,7 +143,7 @@ def command_all(m):
 @bot.message_handler(commands=['about'])
 def handle_about(m):
     bot.send_chat_action(m.chat.id,'typing')
-    note = "About notes here"
+    note = "If you have any advise or suggestion please ping me @love_in_tom"
     bot.send_message(m.chat.id,note,parse_mode='Markdown')
 
 #show source
@@ -165,20 +166,20 @@ def command_start(m):
 @bot.message_handler(commands=['change_language'])
 def command_change_language(m):
     cid = m.chat.id
-	if language == 'english':
-		bot.send_message(cid, "Now choose English or Malayalam",reply_markup=language_select)
-	elif language == 'മലയാളം':
-		bot.send_message(cid, "Malayalam englisho thiranjedukkua",reply_markup=language_select)
+    if language == 'english':
+	    bot.send_message(cid, "Now English and മലയാളം versions of Bible is available, Choose any one!",reply_markup=language_select)
+    elif language == 'മലയാളം':
+        bot.send_message(cid, "ഭാഷ തിരഞ്ഞെടുക്കുക, \nഇപ്പോൾ ഇംഗ്ലീഷ്, മലയാളം ഭാഷകളിൽ ബൈബിൾ ലഭ്യമാണ്",reply_markup=language_select)
     userStep[cid] = 'change_language'
 
 #search bible
 @bot.message_handler(commands=['search'])
 def command_search(m):
     cid = m.chat.id
-	if language == 'english':
-		bot.send_message(cid, "what do you want Old-Testament or New-Testament ?",reply_markup=testament_select)
-	elif language == 'മലയാളം':
-		bot.send_message(cid, "Puthiya niyamam aano Pazhayaniyamam aano vaayikendathu?",reply_markup=testament_select)
+    if language == 'english':
+        bot.send_message(cid, "what do you want Old-Testament or New-Testament ?",reply_markup=testament_select)
+    elif language == 'മലയാളം':
+        bot.send_message(cid, " എന്താണ് വേണ്ടത് പഴയനിയമം, പുതിയനിയമം തിരഞ്ഞെടുക്കുക !",reply_markup=testament_select)
     userStep[cid] = 'search'
 
 #--------------------------------------Bible Search-------------------------------#
@@ -227,7 +228,7 @@ def handle_user_old_test_search(m):
     cid = m.chat.id
     userStep[cid] = 0
     try:
-		chapter_to_search.clear()
+        chapter_to_search.clear()
         chapter_to_search.append(m.text)
         search_result(book_id_to_search[0],chapter_to_search[0],m)
         print(book_id_to_search[0],chapter_to_search[0])
@@ -245,10 +246,10 @@ def msg_search_select(m):
     userQuery = m.text.lower()
     if userQuery == 'മലയാളം':
         language_change_fun(userQuery)
-        bot.send_message(m.chat.id, "ഭാഷ മലയാളത്തിലേക്ക് മാറിയിരിക്കുന്നു  /search")
+        bot.send_message(m.chat.id, "ഭാഷ മലയാളത്തിലേക്ക് മാറിയിരിക്കുന്നു. \nതിരയുവാൻ ക്ലിക്ക് ചെയ്യുക   /search")
     elif userQuery == 'english':
         language_change_fun(userQuery)
-        bot.send_message(m.chat.id, "Language changed to English now /search")        
+        bot.send_message(m.chat.id, "Language changed to English now. \nfor search click here /search")        
         
         
 bot.infinity_polling()
