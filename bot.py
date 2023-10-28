@@ -14,7 +14,7 @@ userStep = {}
 
 book_id_to_search = []
 chapter_to_search = []
-language = 'മലയാളം'  #default language 
+language = 'english' #default language 
 
 hideBoard = types.ReplyKeyboardRemove()  # hide the keyboard
 
@@ -24,16 +24,18 @@ language_select.add('English','മലയാളം')
 testament_select = types.ReplyKeyboardMarkup(one_time_keyboard=True)
 testament_select.add('പഴയ_നിയമം','പുതിയ_നിയമം')
 
-def language_change_fun(language):
-    global root
+def language_change_fun(new_language):
+    global root,language
     # First, clear the existing keyboard options
     testament_select.keyboard.clear()
 
-    if language == 'മലയാളം':
+    if new_language == 'മലയാളം':
+        language = 'മലയാളം'
         testament_select.add('പഴയ_നിയമം', 'പുതിയ_നിയമം')
         # Load the XML file for മലയാളം
         xml_file_path = 'res/bible_mal.xml'
-    elif language == 'english':
+    elif new_language == 'english':
+        language = 'english'
         testament_select.add('Old_Testament', 'New_Testament')
         # Load the XML file for English
         xml_file_path = 'res/bible_eng.xml'
@@ -98,8 +100,8 @@ def find_chapter(book_id_to_search):
     for i in range(1, chapter_count + 1):
         chapter_select.add(str(i))
 
-def search_result(book_id_to_search, chapter,m):
-    print(book_id_to_search,chapter)
+def search_result(book_id_to_search, chapter, m):
+    print(book_id_to_search, chapter)
     cid = m.chat.id
     userStep[cid] = 0
     text = ' '
@@ -115,19 +117,24 @@ def search_result(book_id_to_search, chapter,m):
             for Verse in Chapter.findall('Verse'):
                 verse_id = Verse.get('id')
                 verse_text = Verse.text
-                #print(f"{verse_id}. {verse_text}")
-                text+= verse_id
-                text+= '.'
-                text+= verse_text
-                text+= '\n\n'
-                if len(text) > 1500:    #to solve the issue of max char in one message in Telegram 
-                    bot.send_message(m.chat.id,text)
+
+                # Check if the total message length exceeds Telegram's limit
+                if len(text + verse_id + '.' + verse_text + '\n\n') > 4000:
+                    bot.send_message(m.chat.id, text)
                     text = ' '
-            bot.send_message(m.chat.id, "/search")           
+
+                text += verse_id
+                text += '.'
+                text += verse_text
+                text += '\n\n'
+            if text:
+                bot.send_message(m.chat.id, text)
+                bot.send_message(m.chat.id, "/search")
         else:
             print("Chapter not found.")
     else:
         print("Book not found.")
+
 
 #---------------------main commands-----------------
 #show all available commands
@@ -245,9 +252,11 @@ def msg_search_select(m):
     bot.send_chat_action(cid, 'typing')
     userQuery = m.text.lower()
     if userQuery == 'മലയാളം':
+        language = 'മലയാളം'
         language_change_fun(userQuery)
         bot.send_message(m.chat.id, "ഭാഷ മലയാളത്തിലേക്ക് മാറിയിരിക്കുന്നു. \nതിരയുവാൻ ക്ലിക്ക് ചെയ്യുക   /search")
     elif userQuery == 'english':
+        language = 'english'
         language_change_fun(userQuery)
         bot.send_message(m.chat.id, "Language changed to English now. \nfor search click here /search")        
         
