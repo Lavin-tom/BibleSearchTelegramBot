@@ -149,16 +149,19 @@ def command_all(m):
 #show about
 @bot.message_handler(commands=['about'])
 def handle_about(m):
-    bot.send_chat_action(m.chat.id,'typing')
-    note = "If you have any advise or suggestion please ping me @love_in_tom"
-    bot.send_message(m.chat.id,note,parse_mode='Markdown')
+        bot.send_chat_action(m.chat.id,'typing')
+	    bot.send_message(cid,"WordOfTruth is a Telegram bot that provide Bible quotes as per the user inputs")
+        bot.send_message(cid,"Its an open source project, you can find the /source by click here")
+        link = "https://t.me/love_in_tom"
+        formatted_message = f"If you have any suggestions or feedback feel free to contact me [love_in_tom]({link})"
+        bot.reply_to(m, formatted_message, parse_mode='Markdown')
 
 #show source
 @bot.message_handler(commands=['source'])
 def handle_source(m):
         bot.send_chat_action(m.chat.id,'typing')
         link = "https://github.com/Lavin-tom/Telegram_Bot"
-        formatted_message = f"[Click here]({link}) to visit the GitHub repository."
+        formatted_message = f"[Click here]({link}) to visit the GitHub repository, You can raise pull request and Issue there."
         bot.reply_to(m, formatted_message, parse_mode='Markdown')
 
 #show start
@@ -167,7 +170,7 @@ def command_start(m):
 	cid = m.chat.id
 	if cid not in knownUsers:
 		knownUsers.append(cid)
-		userStep[cid] = 0
+		userStep[cid] = 'start'
 
 #search bible
 @bot.message_handler(commands=['change_language'])
@@ -190,6 +193,14 @@ def command_search(m):
     userStep[cid] = 'search'
 
 #--------------------------------------Bible Search-------------------------------#
+@bot.message_handler(func=lambda message: get_user_step(message.chat.id) == 'start')
+def msg_start_select(m):
+    cid = m.chat.id
+    userStep[cid] = 0
+    bot.send_chat_action(cid, 'typing')
+    bot.send_message(cid,"Welcome to the Bible Search Telegram Bot! This Telegram bot is designed to help users search for Bible verses in both English and Malayalam languages")
+    bot.send_message(cid,'click here /search')
+    
 @bot.message_handler(func=lambda message: get_user_step(message.chat.id) == 'search')
 def msg_search_select(m):
     cid = m.chat.id
