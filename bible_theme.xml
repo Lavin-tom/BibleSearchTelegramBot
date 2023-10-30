@@ -1,0 +1,36 @@
+<Bible name="Malayalam Bible Theme">
+	<Book id='Healing'>
+		<Chapter id='1'>“For I will restore health to you, and your wounds I will heal, declares the Lord” – Jeremiah 30:17″</Chapter>
+		<Chapter id='2'>Heal my soul, for I have sinned against you.” – Psalm 41:4″</Chapter>
+		<Chapter id='3'>But I will restore you to health and heal your wounds,’ declares the Lord, ‘because you are called an outcast, Zion for whom no one cares.” – Jeremiah 30:17″</Chapter>
+		<Chapter id='4'>A cheerful heart is good medicine, but a crushed spirit dries up the bones.” – Proverbs 17:22</Chapter>
+		<Chapter id='5'>“Is anyone among you sick? Let them call the elders of the church to pray over them and anoint them with oil in the name of the Lord.” – James 5:14</Chapter>
+		<Chapter id='6'>Freely you have received; freely give.” – Matthew 10:8″</Chapter>
+		<Chapter id='7'>Then they cried to the Lord in their trouble, and he saved them from their distress. He sent out his word and healed them; he rescued them from the grave.” – Psalm 107:19-20</Chapter>
+		<Chapter id='8'>“Heal me, O Lord, and I will be healed; save me and I will be saved, for you are the one I praise.” – Jeremiah 17:14</Chapter>
+		<Chapter id='9'>“And Jesus went about all Galilee, teaching in their synagogues, and preaching the gospel of the kingdom, and healing all manner of sickness and all manner of disease among the people.” – Matthew 4:23</Chapter>
+		<Chapter id='10'>“But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.” – Isaiah 53:5</Chapter>
+		<Chapter id='11'>And the prayer offered in faith will make the sick person well; the Lord will raise them up. If they have sinned, they will be forgiven.” – James 5:15</Chapter>
+		<Chapter id='12'>“Heal me, Lord, and I will be healed; save me and I will be saved, for you are the one I praise.” – Jeremiah 33:6</Chapter>
+		<Chapter id='13'>“I will restore you to health and heal your wounds,’ declares the Lord.” – Jeremiah 30:17</Chapter>
+		<Chapter id='14'>“He himself bore our sins in his body on the cross, so that we might die to sins and live for righteousness; by his wounds you have been healed.” – 1 Peter 2:24</Chapter>
+		<Chapter id='15'>“He heals the brokenhearted and binds up their wounds.” – Psalm 147:3</Chapter>
+	</Book>
+	<Book id = 'Faith'>
+		<Chapter id='1'>“Now faith is the assurance of things hoped for, the conviction of things not seen.” – Hebrews 11:1</Chapter>
+		<Chapter id='2'>“And without faith it is impossible to please him, for whoever would draw near to God must believe that he exists and that he rewards those who seek him.” – Hebrews 11:6</Chapter>
+		<Chapter id='3'>“For by grace you have been saved through faith. And this is not your own doing; it is the gift of God.” – Ephesians 2:8</Chapter>
+		<Chapter id='4'>“Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ.” – Romans 5:1</Chapter>
+		<Chapter id='5'>“And Jesus answered them, ‘Have faith in God.'” – Mark 11:22</Chapter>
+		<Chapter id='6'>“And whatever you ask in prayer, you will receive, if you have faith.” – Matthew 21:22</Chapter>
+		<Chapter id='7'>“But let him ask in faith, with no doubting, for the one who doubts is like a wave of the sea that is driven and tossed by the wind.” – James 1:6</Chapter>
+		<Chapter id='8'>“For in Christ Jesus you are all sons of God, through faith.” – Galatians 3:26</Chapter>
+		<Chapter id='9'>“I have been crucified with Christ. It is no longer I who live, but Christ who lives in me. And the life I now live in the flesh I live by faith in the Son of God, who loved me and gave himself for me.” – Galatians 2:20</Chapter>
+		<Chapter id='10'>“So faith comes from hearing, and hearing through the word of Christ.” – Romans 10:17</Chapter>
+		<Chapter id='11'>“But my righteous one shall live by faith, and if he shrinks back, my soul has no pleasure in him.” – Hebrews 10:38</Chapter>
+		<Chapter id='12'>“And Jesus said to him, ‘Go your way; your faith has made you well.’ And immediately he recovered his sight and followed him on the way.” – Mark 10:52</Chapter>
+		<Chapter id='13'>“For everyone who has been born of God overcomes the world. And this is the victory that has overcome the world—our faith.” – 1 John 5:4</Chapter>
+		<Chapter id='14'>“And the Lord said, ‘If you had faith like a grain of mustard seed, you could say to this mulberry tree, “Be uprooted and planted in the sea,” and it would obey you.'” – Luke 17:6</Chapter>
+		<Chapter id='15'>“And Jesus said to them, ‘I am the bread of life. Whoever comes to me shall not hunger, and whoever believes in me shall never thirst.'” – John 6:35</Chapter>
+	</Book>
+</Bible>
