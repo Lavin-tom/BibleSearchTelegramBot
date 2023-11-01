@@ -33,21 +33,38 @@
 		<Chapter id='14'>“And the Lord said, ‘If you had faith like a grain of mustard seed, you could say to this mulberry tree, “Be uprooted and planted in the sea,” and it would obey you.'” – Luke 17:6</Chapter>
 		<Chapter id='15'>“And Jesus said to them, ‘I am the bread of life. Whoever comes to me shall not hunger, and whoever believes in me shall never thirst.'” – John 6:35</Chapter>
 	</Book>
-	<Book id = 'Hope'>
-		<Chapter id='1'>“Now faith is the assurance of things hoped for, the conviction of things not seen.” – Hebrews 11:1</Chapter>
-		<Chapter id='2'>“And without faith it is impossible to please him, for whoever would draw near to God must believe that he exists and that he rewards those who seek him.” – Hebrews 11:6</Chapter>
-		<Chapter id='3'>“For by grace you have been saved through faith. And this is not your own doing; it is the gift of God.” – Ephesians 2:8</Chapter>
-		<Chapter id='4'>“Therefore, since we have been justified by faith, we have peace with God through our Lord Jesus Christ.” – Romans 5:1</Chapter>
-		<Chapter id='5'>“And Jesus answered them, ‘Have faith in God.'” – Mark 11:22</Chapter>
-		<Chapter id='6'>“And whatever you ask in prayer, you will receive, if you have faith.” – Matthew 21:22</Chapter>
-		<Chapter id='7'>“But let him ask in faith, with no doubting, for the one who doubts is like a wave of the sea that is driven and tossed by the wind.” – James 1:6</Chapter>
-		<Chapter id='8'>“For in Christ Jesus you are all sons of God, through faith.” – Galatians 3:26</Chapter>
-		<Chapter id='9'>“I have been crucified with Christ. It is no longer I who live, but Christ who lives in me. And the life I now live in the flesh I live by faith in the Son of God, who loved me and gave himself for me.” – Galatians 2:20</Chapter>
-		<Chapter id='10'>“So faith comes from hearing, and hearing through the word of Christ.” – Romans 10:17</Chapter>
-		<Chapter id='11'>“But my righteous one shall live by faith, and if he shrinks back, my soul has no pleasure in him.” – Hebrews 10:38</Chapter>
-		<Chapter id='12'>“And Jesus said to him, ‘Go your way; your faith has made you well.’ And immediately he recovered his sight and followed him on the way.” – Mark 10:52</Chapter>
-		<Chapter id='13'>“For everyone who has been born of God overcomes the world. And this is the victory that has overcome the world—our faith.” – 1 John 5:4</Chapter>
-		<Chapter id='14'>“And the Lord said, ‘If you had faith like a grain of mustard seed, you could say to this mulberry tree, “Be uprooted and planted in the sea,” and it would obey you.'” – Luke 17:6</Chapter>
-		<Chapter id='15'>“And Jesus said to them, ‘I am the bread of life. Whoever comes to me shall not hunger, and whoever believes in me shall never thirst.'” – John 6:35</Chapter>
+	<Book id = 'Thanksgiving'>
+		<Chapter id='1'>“Give thanks to the LORD, for he is good; his love endures forever.” – Psalm 107:1</Chapter>
+		<Chapter id='2'>“Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.” – Philippians 4:6</Chapter>
+		<Chapter id='3'>“Let them give thanks to the LORD for his unfailing love and his wonderful deeds for mankind.” – Psalm 107:8</Chapter>
+		<Chapter id='4'>“Give thanks in all circumstances; for this is God’s will for you in Christ Jesus.” – 1 Thessalonians 5:18</Chapter>
+		<Chapter id='5'>“Sing to the LORD with grateful praise; make music to our God on the harp.” – Psalm 147:7</Chapter>
+		<Chapter id='6'>“Let the peace of Christ rule in your hearts, since as members of one body you were called to peace. And be thankful.” – Colossians 3:15</Chapter>
+		<Chapter id='7'>“I will give thanks to you, LORD, with all my heart; I will tell of all your wonderful deeds.” – Psalm 9:1</Chapter>
+		<Chapter id='8'>“Let us come before him with thanksgiving and extol him with music and song.” – Psalm 95:2</Chapter>
+		<Chapter id='9'>“Enter his gates with thanksgiving and his courts with praise; give thanks to him and praise his name.” – Psalm 100:4</Chapter>
+		<Chapter id='10'>“And whatever you do, whether in word or deed, do it all in the name of the Lord Jesus, giving thanks to God the Father through him.” – Colossians 3:17</Chapter>
+		<Chapter id='11'>“Oh, give thanks to the LORD, for he is good! For his mercy endures forever.” – Psalm 107:1</Chapter>
+		<Chapter id='12'></Chapter>
+		<Chapter id='13'></Chapter>
+		<Chapter id='14'></Chapter>
+		<Chapter id='15'></Chapter>
+	</Book>
+	<Book id = 'Protection'>
+		<Chapter id='1'>He will cover you with his feathers, and under his wings you will find refuge; his faithfulness will be your shield and rampart. Psalm 91:4</Chapter>
+		<Chapter id='2'>“The name of the Lord is a strong tower; the righteous run to it and are safe.”-Proverbs 18:10 </Chapter>
+		<Chapter id='3'>“Fear not, for I am with you; be not dismayed, for I am your God. I will strengthen you, Yes, I will help you, I will uphold you with My righteous right hand.”- Isaiah 41:10 </Chapter>
+		<Chapter id='4'>“God is our refuge and strength, a very present help in trouble.”- Psalm 46:1 </Chapter>
+		<Chapter id='5'>“The angel of the Lord encamps all around those who fear Him, and delivers them.”- Psalm 34:7 </Chapter>
+		<Chapter id='6'>“The Lord shall preserve you from all evil; He shall preserve your soul. The Lord shall preserve your going out and your coming in from this time forth, and even forevermore.”- Psalm 121:7-8</Chapter>
+		<Chapter id='7'>“But the Lord is faithful, who will establish you and guard you from the evil one.”- 2 Thessalonians 3:3 </Chapter>
+		<Chapter id='8'>“The Lord will fight for you, and you shall hold your peace.”- Exodus 14:14</Chapter>
+		<Chapter id='9'>“The Lord is my rock and my fortress and my deliverer; my God, my strength, in whom I will trust; my shield and the horn of my salvation, my stronghold.”- Psalm 18:2</Chapter>
+		<Chapter id='10'>“The Lord is your keeper; the Lord is your shade at your right hand.”-Psalm 121:5</Chapter>
+		<Chapter id='11'>“Trust in the Lord with all your heart, and lean not on your own understanding; In all your ways acknowledge Him, and He shall direct your paths.”- Proverbs 3:5-6</Chapter>
+		<Chapter id='12'>“You are my hiding place; You shall preserve me from trouble; You shall surround me with songs of deliverance.”- Psalm 32:7</Chapter>
+		<Chapter id='13'>“The Lord is my light and my salvation; whom shall I fear? The Lord is the strength of my life; of whom shall I be afraid?”- Psalm 27:1</Chapter>
+		<Chapter id='14'>“I will say of the Lord, ‘He is my refuge and my fortress; my God, in Him I will trust.”- Psalm 91:2</Chapter>
+		<Chapter id='15'>“As the mountains surround Jerusalem, so the Lord surrounds His people from this time forth and forever.”- Psalm 125:2</Chapter>
 	</Book>
 </Bible>
