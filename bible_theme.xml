@@ -67,4 +67,21 @@
 		<Chapter id='14'>“I will say of the Lord, ‘He is my refuge and my fortress; my God, in Him I will trust.”- Psalm 91:2</Chapter>
 		<Chapter id='15'>“As the mountains surround Jerusalem, so the Lord surrounds His people from this time forth and forever.”- Psalm 125:2</Chapter>
 	</Book>
+	<Book id = 'Patience'>
+		<Chapter id='1'>“But if we hope for what we do not see, we wait for it with patience.” – Romans 8:25</Chapter>
+		<Chapter id='2'>“Whoever is slow to anger has great understanding, but he who has a hasty temper exalts folly.” – Proverbs 14:29</Chapter>
+		<Chapter id='3'>“But let patience have its perfect work, that you may be perfect and complete, lacking nothing.” – James 1:4</Chapter>
+		<Chapter id='4'>“Love is patient, love is kind. It does not envy, it does not boast, it is not proud.” – 1 Corinthians 13:4</Chapter>
+		<Chapter id='5'>“Rejoice in hope, be patient in tribulation, be constant in prayer.” – Romans 12:12</Chapter>
+		<Chapter id='6'>“Be still before the Lord and wait patiently for him; fret not yourself over the one who prospers in his way, over the man who carries out evil devices!” – Psalm 37:7</Chapter>
+		<Chapter id='7'>“And we urge you, brothers, admonish the idle, encourage the fainthearted, help the weak, be patient with them all.” – 1 Thessalonians 5:14</Chapter>
+		<Chapter id='8'>“The Lord is not slow to fulfill his promise as some count slowness, but is patient toward you, not wishing that any should perish, but that all should reach repentance.” – 2 Peter 3:9</Chapter>
+		<Chapter id='9'>“Better is the end of a thing than its beginning, and the patient in spirit is better than the proud in spirit.” – Ecclesiastes 7:8</Chapter>
+		<Chapter id='10'>“Wait for the Lord; be strong, and let your heart take courage; wait for the Lord!” – Psalm 27:14</Chapter>
+		<Chapter id='11'>“For you have need of endurance, so that when you have done the will of God you may receive what is promised.” – Hebrews 10:36</Chapter>
+		<Chapter id='12'>“A hot-tempered man stirs up strife, but he who is slow to anger quiets contention.” – Proverbs 15:18</Chapter>
+		<Chapter id='13'>“Let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up.” – Galatians 6:9</Chapter>
+		<Chapter id='14'>“The Lord is merciful and gracious, slow to anger and abounding in steadfast love.” – Psalm 103:8</Chapter>
+		<Chapter id='15'>“For whatever was written in former days was written for our instruction, that through endurance and through the encouragement of the Scriptures we might have hope.” – Romans 15:4</Chapter>
+	</Book>	
 </Bible>
