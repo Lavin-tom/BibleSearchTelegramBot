@@ -24,6 +24,9 @@ language_select.add('English','മലയാളം')
 testament_select = types.ReplyKeyboardMarkup(one_time_keyboard=True)
 testament_select.add('പഴയ_നിയമം','പുതിയ_നിയമം')
 
+themes_select = types.ReplyKeyboardMarkup(one_time_keyboard=True)
+themes_select.add('Healing','Faith','Thanksgiving','Protection','Patience')
+
 def language_change_fun(new_language):
     global root,language
     # First, clear the existing keyboard options
