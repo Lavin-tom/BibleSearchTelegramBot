@@ -72,6 +72,7 @@ chapter_select = types.ReplyKeyboardMarkup(one_time_keyboard=True)
 commands = {'search': 'Search Bible',
             'change_language': 'Change language',
 			'all':'List all commands',
+            'select_theme': 'Select a quotes for a theme',
             'about':'About me'}
 
 def get_user_step(uid):
@@ -195,6 +196,16 @@ def command_search(m):
         bot.send_message(cid, " എന്താണ് വേണ്ടത് പഴയനിയമം, പുതിയനിയമം തിരഞ്ഞെടുക്കുക !",reply_markup=testament_select)
     userStep[cid] = 'search'
 
+#select theme
+@bot.message_handler(commands=['select_theme'])
+def command_search(m):
+    cid = m.chat.id
+    if language == 'english':
+        bot.send_message(cid, "Select any theme?",reply_markup=themes_select)
+    elif language == 'മലയാളം':
+        bot.send_message(cid, "Now english only support for theme",reply_markup=themes_select)
+    userStep[cid] = 'select_theme'
+    
 #--------------------------------------Bible Search-------------------------------#
 @bot.message_handler(func=lambda message: get_user_step(message.chat.id) == 'start')
 def msg_start_select(m):
