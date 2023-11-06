@@ -1,4 +1,5 @@
 import telebot
+import random
 import xml.etree.ElementTree as ET
 from telebot import types
 
@@ -268,6 +269,45 @@ def handle_user_old_test_search(m):
         userStep[cid] = 'search_bible'
     except Exception as e:
         bot.send_message(m.chat.id, "Search error!! error while selecting verses")
+
+#bible_theme search        
+@bot.message_handler(func=lambda message: get_user_step(message.chat.id) == 'select_theme')
+def msg_search_select(m):
+    cid = m.chat.id
+    userStep[cid] = 0
+    bot.send_chat_action(cid, 'typing')
+    userQuery = m.text.lower()
+    
+    # Parse the XML file
+    tree = ET.parse('your_xml_file.xml')  # Replace 'your_xml_file.xml' with the actual file path
+
+    # Get the root element
+    root = tree.getroot()
+    
+    random_chapter_number = random.randint(1,15)
+    if Book is not None:
+        Theme = Book.find(f"./Chapter[@id='{book}']")
+        if Theme is not None:
+            for Verse in Theme.findall('Verse'):
+                verse_id = Verse.get('id')
+                verse_text = Verse.text
+
+                # Check if the total message length exceeds Telegram's limit
+                if len(text + verse_id + '.' + verse_text + '\n\n') > 4000:
+                    bot.send_message(m.chat.id, text)
+                    text = ' '
+
+                text += verse_id
+                text += '.'
+                text += verse_text
+                text += '\n\n'
+            if text:
+                bot.send_message(m.chat.id, text)
+                bot.send_message(m.chat.id, "/search")
+        else:
+            print("Chapter not found.")
+    else:
+        print("Book not found.")
  
 #language change  
 @bot.message_handler(func=lambda message: get_user_step(message.chat.id) == 'change_language')
