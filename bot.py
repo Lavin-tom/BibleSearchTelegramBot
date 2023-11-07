@@ -205,6 +205,7 @@ def command_search(m):
         bot.send_message(cid, "Select any theme?",reply_markup=themes_select)
     elif language == 'മലയാളം':
         bot.send_message(cid, "Now english only support for theme",reply_markup=themes_select)
+        language = 'english'
     userStep[cid] = 'select_theme'
     
 #--------------------------------------Bible Search-------------------------------#
