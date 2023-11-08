@@ -15,7 +15,7 @@ userStep = {}
 
 book_id_to_search = []
 chapter_to_search = []
-language = 'english' #default language 
+language = 'english' #default language
 
 hideBoard = types.ReplyKeyboardRemove()  # hide the keyboard
 
@@ -154,12 +154,13 @@ def command_all(m):
 #show about
 @bot.message_handler(commands=['about'])
 def handle_about(m):
-        bot.send_chat_action(m.chat.id,'typing')
-	    bot.send_message(cid,"WordOfTruth is a Telegram bot that provide Bible quotes as per the user inputs")
-        bot.send_message(cid,"Its an open source project, you can find the /source by click here")
-        link = "https://t.me/love_in_tom"
-        formatted_message = f"If you have any suggestions or feedback feel free to contact me [love_in_tom]({link})"
-        bot.reply_to(m, formatted_message, parse_mode='Markdown')
+    cid = m.chat.id
+    bot.send_chat_action(m.chat.id,'typing')
+    bot.send_message(cid,"WordOfTruth is a Telegram bot that provide Bible quotes as per the user inputs")
+    bot.send_message(cid,"Its an open source project, you can find the /source by click here")
+    link = "https://t.me/love_in_tom"
+    formatted_message = f"If you have any suggestions or feedback feel free to contact me [love_in_tom]({link})"
+    bot.reply_to(m, formatted_message, parse_mode='Markdown')
 
 #show source
 @bot.message_handler(commands=['source'])
@@ -205,9 +206,8 @@ def command_search(m):
         bot.send_message(cid, "Select any theme?",reply_markup=themes_select)
     elif language == 'മലയാളം':
         bot.send_message(cid, "Now english only support for theme",reply_markup=themes_select)
-        language = 'english'
     userStep[cid] = 'select_theme'
-    
+
 #--------------------------------------Bible Search-------------------------------#
 @bot.message_handler(func=lambda message: get_user_step(message.chat.id) == 'start')
 def msg_start_select(m):
@@ -216,7 +216,7 @@ def msg_start_select(m):
     bot.send_chat_action(cid, 'typing')
     bot.send_message(cid,"Welcome to the Bible Search Telegram Bot! This Telegram bot is designed to help users search for Bible verses in both English and Malayalam languages")
     bot.send_message(cid,'click here /search')
-    
+
 @bot.message_handler(func=lambda message: get_user_step(message.chat.id) == 'search')
 def msg_search_select(m):
     cid = m.chat.id
@@ -230,13 +230,13 @@ def msg_search_select(m):
     elif userQuery == 'പുതിയ_നിയമം':
         bot.send_message(cid, "പുസ്‌തകം തിരഞ്ഞെടുക്കുക !!",reply_markup=New_testement_select)
         userStep[cid] = 'select_chapter'
-        
+
     elif userQuery == 'old_testament':
         bot.send_message(cid, "Choose any book?",reply_markup=Old_testement_english_select)
         userStep[cid] = 'select_chapter'
 
     elif userQuery == 'new_testament':
-        bot.send_message(cid, "Choose any book?",reply_markup=New_testement_english_select)    
+        bot.send_message(cid, "Choose any book?",reply_markup=New_testement_english_select)
         userStep[cid] = 'select_chapter'
     else:
         bot.send_message(cid,"Invalid Commmands")
@@ -271,46 +271,43 @@ def handle_user_old_test_search(m):
     except Exception as e:
         bot.send_message(m.chat.id, "Search error!! error while selecting verses")
 
-#bible_theme search        
 @bot.message_handler(func=lambda message: get_user_step(message.chat.id) == 'select_theme')
 def msg_search_select(m):
     cid = m.chat.id
     userStep[cid] = 0
     bot.send_chat_action(cid, 'typing')
     userQuery = m.text.lower()
-    
+
     # Parse the XML file
-    tree = ET.parse('your_xml_file.xml')  # Replace 'your_xml_file.xml' with the actual file path
-
-    # Get the root element
+    tree = ET.parse('res/bible_theme.xml')
     root = tree.getroot()
-    
-    random_chapter_number = random.randint(1,15)
-    if Book is not None:
-        Theme = Book.find(f"./Chapter[@id='{book}']")
-        if Theme is not None:
-            for Verse in Theme.findall('Verse'):
-                verse_id = Verse.get('id')
-                verse_text = Verse.text
 
-                # Check if the total message length exceeds Telegram's limit
-                if len(text + verse_id + '.' + verse_text + '\n\n') > 4000:
-                    bot.send_message(m.chat.id, text)
-                    text = ' '
+    book = userQuery
 
-                text += verse_id
-                text += '.'
-                text += verse_text
-                text += '\n\n'
-            if text:
-                bot.send_message(m.chat.id, text)
-                bot.send_message(m.chat.id, "/search")
+    # Find the book element
+    book_element = root.find(f"./Book[@id='{book}']")
+
+    if book_element is not None:
+        # Get all chapters within the book
+        chapters = book_element.findall('Chapter')
+
+        if chapters:
+            # Choose a random chapter
+            random_chapter = random.choice(chapters)
+
+            # Get the ID and text of the random chapter
+            chapter_id = random_chapter.get('id')
+            chapter_text = random_chapter.text
+
+            # Send the random verse to the user
+            bot.send_message(m.chat.id, f"{chapter_text}")
+            bot.send_message(m.chat.id,'/select_theme')
         else:
-            print("Chapter not found.")
+            bot.send_message(m.chat.id, "No chapters found in the selected book.")
     else:
-        print("Book not found.")
- 
-#language change  
+        bot.send_message(m.chat.id, "Book not found.")
+
+#language change
 @bot.message_handler(func=lambda message: get_user_step(message.chat.id) == 'change_language')
 def msg_search_select(m):
     cid = m.chat.id
@@ -324,7 +321,7 @@ def msg_search_select(m):
     elif userQuery == 'english':
         language = 'english'
         language_change_fun(userQuery)
-        bot.send_message(m.chat.id, "Language changed to English now. \nfor search click here /search")        
-        
-        
+        bot.send_message(m.chat.id, "Language changed to English now. \nfor search click here /search")
+
+
 bot.infinity_polling()
