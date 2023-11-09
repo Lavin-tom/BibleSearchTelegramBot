@@ -1,5 +1,5 @@
 <Bible name="Malayalam Bible Theme">
-	<Book id='Healing'>
+	<Book id='healing'>
 		<Chapter id='1'>“For I will restore health to you, and your wounds I will heal, declares the Lord” – Jeremiah 30:17″</Chapter>
 		<Chapter id='2'>Heal my soul, for I have sinned against you.” – Psalm 41:4″</Chapter>
 		<Chapter id='3'>But I will restore you to health and heal your wounds,’ declares the Lord, ‘because you are called an outcast, Zion for whom no one cares.” – Jeremiah 30:17″</Chapter>
@@ -16,7 +16,7 @@
 		<Chapter id='14'>“He himself bore our sins in his body on the cross, so that we might die to sins and live for righteousness; by his wounds you have been healed.” – 1 Peter 2:24</Chapter>
 		<Chapter id='15'>“He heals the brokenhearted and binds up their wounds.” – Psalm 147:3</Chapter>
 	</Book>
-	<Book id = 'Faith'>
+	<Book id = 'faith'>
 		<Chapter id='1'>“Now faith is the assurance of things hoped for, the conviction of things not seen.” – Hebrews 11:1</Chapter>
 		<Chapter id='2'>“And without faith it is impossible to please him, for whoever would draw near to God must believe that he exists and that he rewards those who seek him.” – Hebrews 11:6</Chapter>
 		<Chapter id='3'>“For by grace you have been saved through faith. And this is not your own doing; it is the gift of God.” – Ephesians 2:8</Chapter>
@@ -33,7 +33,7 @@
 		<Chapter id='14'>“And the Lord said, ‘If you had faith like a grain of mustard seed, you could say to this mulberry tree, “Be uprooted and planted in the sea,” and it would obey you.'” – Luke 17:6</Chapter>
 		<Chapter id='15'>“And Jesus said to them, ‘I am the bread of life. Whoever comes to me shall not hunger, and whoever believes in me shall never thirst.'” – John 6:35</Chapter>
 	</Book>
-	<Book id = 'Thanksgiving'>
+	<Book id = 'thanksgiving'>
 		<Chapter id='1'>“Give thanks to the LORD, for he is good; his love endures forever.” – Psalm 107:1</Chapter>
 		<Chapter id='2'>“Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.” – Philippians 4:6</Chapter>
 		<Chapter id='3'>“Let them give thanks to the LORD for his unfailing love and his wonderful deeds for mankind.” – Psalm 107:8</Chapter>
@@ -50,7 +50,7 @@
 		<Chapter id='14'>"But blessed are your eyes because they see, and your ears because they hear." - Matthew 13:16 </Chapter>
 		<Chapter id='15'>"Rejoice always, pray continually, give thanks in all circumstances; for this is God’s will for you in Christ Jesus." - 1 Thessalonians 5:16-18</Chapter>
 	</Book>
-	<Book id = 'Protection'>
+	<Book id = 'protection'>
 		<Chapter id='1'>He will cover you with his feathers, and under his wings you will find refuge; his faithfulness will be your shield and rampart. Psalm 91:4</Chapter>
 		<Chapter id='2'>“The name of the Lord is a strong tower; the righteous run to it and are safe.”-Proverbs 18:10 </Chapter>
 		<Chapter id='3'>“Fear not, for I am with you; be not dismayed, for I am your God. I will strengthen you, Yes, I will help you, I will uphold you with My righteous right hand.”- Isaiah 41:10 </Chapter>
@@ -67,7 +67,7 @@
 		<Chapter id='14'>“I will say of the Lord, ‘He is my refuge and my fortress; my God, in Him I will trust.”- Psalm 91:2</Chapter>
 		<Chapter id='15'>“As the mountains surround Jerusalem, so the Lord surrounds His people from this time forth and forever.”- Psalm 125:2</Chapter>
 	</Book>
-	<Book id = 'Patience'>
+	<Book id = 'patience'>
 		<Chapter id='1'>“But if we hope for what we do not see, we wait for it with patience.” – Romans 8:25</Chapter>
 		<Chapter id='2'>“Whoever is slow to anger has great understanding, but he who has a hasty temper exalts folly.” – Proverbs 14:29</Chapter>
 		<Chapter id='3'>“But let patience have its perfect work, that you may be perfect and complete, lacking nothing.” – James 1:4</Chapter>
