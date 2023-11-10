@@ -72,7 +72,7 @@ chapter_select = types.ReplyKeyboardMarkup(one_time_keyboard=True)
 
 commands = {'search': 'Search Bible',
             'change_language': 'Change language',
-			'all':'List all commands',
+	    'all':'List all commands',
             'select_theme': 'Select a quotes for a theme',
             'about':'About me'}
 
