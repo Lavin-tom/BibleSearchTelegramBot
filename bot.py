@@ -26,7 +26,7 @@ testament_select = types.ReplyKeyboardMarkup(one_time_keyboard=True)
 testament_select.add('പഴയ_നിയമം','പുതിയ_നിയമം')
 
 themes_select = types.ReplyKeyboardMarkup(one_time_keyboard=True)
-themes_select.add('Healing','Faith','Thanksgiving','Protection','Patience')
+themes_select.add('Anger','Anxiety','Healing','Faith','Thanksgiving','Protection','Patience')
 
 def language_change_fun(new_language):
     global root,language
@@ -72,7 +72,7 @@ chapter_select = types.ReplyKeyboardMarkup(one_time_keyboard=True)
 
 commands = {'search': 'Search Bible',
             'change_language': 'Change language',
-	    'all':'List all commands',
+            'all':'List all commands',
             'select_theme': 'Select a quotes for a theme',
             'about':'About me'}
 
