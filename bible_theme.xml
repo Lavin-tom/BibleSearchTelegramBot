@@ -1,4 +1,38 @@
 <Bible name="Malayalam Bible Theme">
+	<Book id='anger'>
+		<Chapter id='1'>Humble yourselves before the Lord, and he will lift you up. – James 4:10</Chapter>
+		<Chapter id='2'>Whom have I in heaven but you? And being with you, I desire nothing on earth.My flesh and my heart may fail, but God is the strength of my heart and myportion forever. - Psalm 73:25-26</Chapter>
+		<Chapter id='3'>I will give you a new heart and put a new spirit in you - Ezekiel 36:26</Chapter>
+		<Chapter id='4'>The arrogance of man will be brought low and the pride of men humbled - Isaiah 2:17-18</Chapter>
+		<Chapter id='5'>“In your anger do not sin": Do not let the sun go down while you are still angry,and do not give the devil a foothold. - Ephesians 4:26-27</Chapter>
+		<Chapter id='6'>My prayer is ever against the deeds of evil-doers. - Psalm 141:5 </Chapter>
+		<Chapter id='7'>Everyone should be quick to listen, slow to speak and slow to become angry, for man's anger does not bring about the righteous life that God desires - James 1:19-20</Chapter>
+		<Chapter id='8'>“Do nothing out of selfish ambition or vain conceit, but in humility consider othersbetter than yourselves - Philippians 2:3</Chapter>
+		<Chapter id='9'>“The fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness and self-control. - Galatians 5:22-23</Chapter>
+		<Chapter id='10'>“You, O Lord, are a compassionate and gracious God, slow to anger, abounding in love and faithfulness. - Psalm 86:15</Chapter>
+		<Chapter id='11'>If a man pays back evil for good, evil will never leave his house - Proverbs 17:13</Chapter>
+		<Chapter id='12'></Chapter>
+		<Chapter id='13'></Chapter>
+		<Chapter id='14'></Chapter>
+		<Chapter id='15'></Chapter>
+	</Book>
+	<Book id = 'anxiety'>
+		<Chapter id='1'>Come to me, all you who are weary and burdened, and I will give you rest. - Matthew 11:28</Chapter>
+		<Chapter id='2'>In this world, you will have trouble. But take heart! I have overcome the world! - John 16:33</Chapter>
+		<Chapter id='3'>I am with you and will watch over you wherever you go, and I will bring you backto this land. I will not leave you until I have done what I have promised. - Genesis 28:15</Chapter>
+		<Chapter id='4'>It is unthinkable that God would do wrong, that the Almighty would pervert justice. - Job 34:12</Chapter>
+		<Chapter id='5'>Some trust in chariots and some in horses, but we trust in the name of the Lord our God. - Psalm 20:7</Chapter>
+		<Chapter id='6'>Call upon me in the day of trouble; I will deliver you, and you will honor me - Psalm 50:15</Chapter>
+		<Chapter id='7'>Cast your cares on the Lord and he will sustain you. - Psalm 55:22</Chapter>
+		<Chapter id='8'>In the day of my trouble I will call to you, for you will answer me. - Psalm 68:7</Chapter>
+		<Chapter id='9'>I am the Lord, your God, who takes hold of your right hand and says to you, do not fear; I will help you - Isaiah 41:13</Chapter>
+		<Chapter id='10'>Trust in the Lord with all your heart and lean not on your own understanding; in all your ways acknowledge him, and he will make your paths straight. - Proverbs 3:5-6</Chapter>
+		<Chapter id='11'>He tends his flock like a shepherd: He gathers the lambs in his arms and carries them close to his heart; he gently leads those that have young - Isaiah 40:11 </Chapter>
+		<Chapter id='12'>Praise be to the Lord, to God our Savior, who daily bears our burdens. - Psalm 68:19</Chapter>
+		<Chapter id='13'>Anxiety in the heart of a man weighs it down. But a good word makes it glad. - Proverbs 3:5-6</Chapter>
+		<Chapter id='14'>Joyful heart makes a cheerful face, but when the heart is sad, the spirit is broken. - Proverbs 15:13 </Chapter>
+		<Chapter id='15'>Cast thy burden upon the Lord, and He shall sustain thee: He shall never suffer the righteous to be moved - Psalm 55:22</Chapter>
+	</Book>
 	<Book id='healing'>
 		<Chapter id='1'>“For I will restore health to you, and your wounds I will heal, declares the Lord” – Jeremiah 30:17″</Chapter>
 		<Chapter id='2'>Heal my soul, for I have sinned against you.” – Psalm 41:4″</Chapter>
@@ -45,10 +79,10 @@
 		<Chapter id='9'>“Enter his gates with thanksgiving and his courts with praise; give thanks to him and praise his name.” – Psalm 100:4</Chapter>
 		<Chapter id='10'>“And whatever you do, whether in word or deed, do it all in the name of the Lord Jesus, giving thanks to God the Father through him.” – Colossians 3:17</Chapter>
 		<Chapter id='11'>“Oh, give thanks to the LORD, for he is good! For his mercy endures forever.” – Psalm 107:1</Chapter>
-		<Chapter id='12'>"Give thanks to the Lord, for he is good; his love endures forever." -1 Chronicles 16:34 </Chapter>
-		<Chapter id='13'>"Devote yourselves to prayer, being watchful and thankful."- Colossians 4:2 </Chapter>
-		<Chapter id='14'>"But blessed are your eyes because they see, and your ears because they hear." - Matthew 13:16 </Chapter>
-		<Chapter id='15'>"Rejoice always, pray continually, give thanks in all circumstances; for this is God’s will for you in Christ Jesus." - 1 Thessalonians 5:16-18</Chapter>
+		<Chapter id='12'></Chapter>
+		<Chapter id='13'></Chapter>
+		<Chapter id='14'></Chapter>
+		<Chapter id='15'></Chapter>
 	</Book>
 	<Book id = 'protection'>
 		<Chapter id='1'>He will cover you with his feathers, and under his wings you will find refuge; his faithfulness will be your shield and rampart. Psalm 91:4</Chapter>
