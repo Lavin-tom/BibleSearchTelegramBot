@@ -135,4 +135,21 @@
 		<Chapter id='14'>"But anyone who accepts correction is wise."- Proverbs 15:5</Chapter>
 		<Chapter id='15'>"Children, obey your parents in the Lord: for this is right. Honour thy father and mother; which is the first commandment with promise; That it may be well with thee, and thou mayest live long on the earth." - Ephesians 6:1-3</Chapter>
 	</Book>	
+	<Book id = 'blessings'>
+		<Chapter id='1'>"I will send down showers in season; there will be showers of blessing" - Ezekiel 34:26 </Chapter>
+		<Chapter id='2'>"He who did not spare his own Son, but gave him up for us all-how will he not also, along with him, graciously give us all things? - Romans 8:32 </Chapter>
+		<Chapter id='3'>"Praise be to the God and Father of our Lord Jesus Christ, who has blessed us in the heavenly realms with every spiritual blessing in Christ. " - Ephesians 1:3 </Chapter>
+		<Chapter id='4'>"How great is your goodness, which you have stored up for those who fear you, which you bestow in the sight of men on those who take refuge in you." - Psalm 31:19</Chapter>
+		<Chapter id='5'>"God will bless us, and all the ends of the earth will fear him. " - Psalm 67:7</Chapter>
+		<Chapter id='6'>"Blessed are those whose strength is in you" - Psalm 84:5</Chapter>
+		<Chapter id='7'>"The Lord will indeed give what is good"- Psalm 85:12</Chapter>
+		<Chapter id='8'>"He satisfies the thirsty and fills the hungry with good things"- Psalm 107:9</Chapter>
+		<Chapter id='9'>"He will bless those who fear the Lord, who walk in his ways" - Psalm 115:13</Chapter>
+		<Chapter id='10'>"Tell the righteous it will be well with them, for they will enjoy the fruit of their deeds" - Isaiah 3:10</Chapter>
+		<Chapter id='11'>"Blessed are all who fear the Lord, who walk in his ways"- Psalm 128:1</Chapter>
+		<Chapter id='12'>"Blessed is the man who trusts in the Lord, whose confidence is in Him"- Jeremiah 17:7</Chapter>
+		<Chapter id='13'>"The Lord remembers us and will bless us." - Psalm 115:12</Chapter>
+		<Chapter id='14'>"I will never stop doing good to them." - Jeremiah 32:40</Chapter>
+		<Chapter id='15'></Chapter>
+	</Book>	
 </Bible>
