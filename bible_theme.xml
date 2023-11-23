@@ -151,5 +151,22 @@
 		<Chapter id='13'>"The Lord remembers us and will bless us." - Psalm 115:12</Chapter>
 		<Chapter id='14'>"I will never stop doing good to them." - Jeremiah 32:40</Chapter>
 		<Chapter id='15'></Chapter>
-	</Book>	
+	</Book>
+		<Book id = 'care'>
+		<Chapter id='1'>"God is able to make all grace abound to you, so that in all things at all times, having all you need, you will abound in every good work."- 11 Cor. 9:8</Chapter>
+		<Chapter id='2'>"The Lord will guide you always; he will satisfy your needs in a sun-scorched land and will strengthen your frame." - saiah 58:11 </Chapter>
+		<Chapter id='3'>"The Lord is my shepherd, I shall lack nothing"- Psalm 23:1</Chapter>
+		<Chapter id='4'>"Remember the Lord your God, for it is he who gives you the ability to produce wealth" - Deut. 8:18</Chapter>
+		<Chapter id='5'>"He is our God and we are the people of his pasture, the flock under his care" - Psalm 95:7</Chapter>
+		<Chapter id='6'>"Surely God is my help; the Lord is the one who sustains me" - Psalm 54:4</Chapter>
+		<Chapter id='7'>"God will meet all your needs." - Philippians 4:19</Chapter>
+		<Chapter id='8'></Chapter>
+		<Chapter id='9'></Chapter>
+		<Chapter id='10'></Chapter>
+		<Chapter id='11'></Chapter>
+		<Chapter id='12'></Chapter>
+		<Chapter id='13'></Chapter>
+		<Chapter id='14'></Chapter>
+		<Chapter id='15'></Chapter>
+	</Book>
 </Bible>
