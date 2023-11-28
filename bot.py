@@ -26,7 +26,7 @@ testament_select = types.ReplyKeyboardMarkup(one_time_keyboard=True)
 testament_select.add('പഴയ_നിയമം','പുതിയ_നിയമം')
 
 themes_select = types.ReplyKeyboardMarkup(one_time_keyboard=True)
-themes_select.add('Anger','Anxiety','Healing','Faith','Thanksgiving','Protection','Patience','Blessings','Care','Love','Funeral')
+themes_select.add('Anger','Anxiety','Healing','Faith','Thanksgiving','Protection','Patience','Blessings','Care','Love','Funeral','Wedding')
 
 def language_change_fun(new_language):
     global root,language
